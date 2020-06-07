@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://getbootstrap.com/docs/4.1/examples/checkout/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="./Checkout example for Bootstrap_files/money.svg">
+
+    <title>Real Estate Price Estimation</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/checkout/">
+    <script src="./js/main.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./Checkout example for Bootstrap_files/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./Checkout example for Bootstrap_files/form-validation.css" rel="stylesheet">
+  </head>
+  
+  <body class="bg-light">
+
+   
+
+
+
+
+    
+
+
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="./Checkout example for Bootstrap_files/money.svg" alt="" width="72" height="72">
+        <h1>Real Estate Pricing Estimation</h1>
+        <h2>How Low can you go?</h2>
+        <p class="lead">Below is a form that you can use to estimate what is the possible lowest and highest asking price for a certain apartment.</p>
+      </div>
+        <div class="col">
+          <h4 class="mb-3">House Price Variables</h4>
+          <form class="needs-validation" novalidate="">
+            
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="email">Email <span class="text-muted">(Optional)</span></label>
+                <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                <div class="invalid-feedback">
+                  Please enter a valid email address to recieve details
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="firstName">Acceptable Margin</label>
+                <input type="number" step="0.1" class="form-control" id="acceptableMargin" placeholder="Insert" value=""  >
+                <div class="invalid-feedback">
+                  Valid Acceptable margin is required
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">Site Area</label>
+                <input type="number" step="100" class="form-control" id="siteArea" placeholder="Insert" value=""  >
+                <div class="invalid-feedback">
+                  Valid area required
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label>Old Residential Details</label>
+              <div class="input-group">
+                <input type="number" class="form-control" id="ORfloors" placeholder="Old Residential Floors"  >
+                <input type="number" class="form-control" id="Oflats" placeholder="Old Flats per Floor"  >
+                <input type="number" class="form-control" id="OFarea" placeholder="Old Flats Area"  >
+
+                <div class="invalid-feedback" style="width: 100%;">
+                  Your Old Flat Fetails are Required
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="address">Max plot Ratio</label>
+              <input type="number" class="form-control" id="maxplotratio" placeholder="Insert"  >
+              <div class="invalid-feedback">
+                Please enter your Max Plot Ratio
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="address2">Site Coverage</label>
+              <input type="number" class="form-control" id="address2" placeholder="Insert"  >
+              <div class="invalid-feedback">
+                Please select a valid Site Coverage
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-5 mb-3">
+                <label for="address2">New unit Price per area</label>
+                <input type="number" class="form-control" id="address2" placeholder="Insert"  >
+                <div class="invalid-feedback">
+                  Please select a valid area
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="address2">Construction cost per area</label>
+                <input type="number" class="form-control" id="CCperarea" placeholder="Insert"  >
+                <div class="invalid-feedback">
+                  Please provide a valid construction cost per area
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="address2">Agent Fees when selling</label>
+                <input type="number" class="form-control" id="address2" placeholder="Insert"  >
+                <div class="invalid-feedback">
+                  Please provide a valid agent fees
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="address2">Total Bank Interest</label>
+              <input type="number" class="form-control" id="totalBankInterest" placeholder="Insert"  >
+              <div class="invalid-feedback">
+                Please provide valid total bank interest 
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="address2">Second-hand market value of each old flat</label>
+              <input type="number" class="form-control" id="Sechandvalue" placeholder="Insert"  >
+              <div class="invalid-feedback">
+                Please provide second-hand market value of each flat
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="address2">x</label>
+              <input type="number" class="form-control" id="x1" placeholder="Insert"  >
+              <div class="invalid-feedback">
+                Please provide this value
+              </div>              
+            </div>
+          </form>
+          <button class="btn btn-primary" onclick="oGFA()">Submit</button>
+            <br></br>
+            <h4 class="mb-3">Calculated Values</h4>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="cc-name">Old GFA</label>
+                <input type="text" class="form-control" id="oldGFA" placeholder=""  >
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="cc-number">New GFA</label>
+                <input type="text" class="form-control" id="newGFA" placeholder=""  >
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="cc-number">Old Unit Price to ask</label>
+                <input type="text" class="form-control" id="OunitPrice" placeholder=""  >
+                <div class="invalid-feedback">
+                  Credit card number is required
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="cc-number">Cost</label>
+                <input type="text" class="form-control" id="cost" placeholder=""  >
+                <div class="invalid-feedback">
+                  Credit card number is required
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="cc-number">Profit</label>
+                <input type="text" class="form-control" id="cost" placeholder=""  >
+                <div class="invalid-feedback">
+                  Credit card number is required
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="cc-number">Revenue</label>
+                <input type="text" class="form-control" id="cost" placeholder=""  >
+                <div class="invalid-feedback">
+                  Credit card number is required
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="cc-number">Margin</label>
+                <input type="text" class="form-control" id="cost" placeholder=""  >
+                <div class="invalid-feedback">
+                  Credit card number is required
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="cc-number">New Margin</label>
+                <input type="text" class="form-control" id="cost" placeholder=""  >
+                <div class="invalid-feedback">
+                  Credit card number is required
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="cc-number"><strong>New Max Unit Price</strong></label>
+                <input type="text" class="form-control" id="cost" placeholder=""  >
+                <div class="invalid-feedback">
+                  Credit card number is required
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="cc-number"><strong>Lowest you should ask</strong></label>
+                <input type="text" class="form-control" id="cost" placeholder=""  >
+                <div class="invalid-feedback">
+                  Credit card number is required
+                </div>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">CIVIL 1160 Group Project</p>
+      </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./Checkout example for Bootstrap_files/jquery-3.3.1.slim.min.js.download" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="./Checkout example for Bootstrap_files/popper.min.js.download"></script>
+    <script src="./Checkout example for Bootstrap_files/bootstrap.min.js.download"></script>
+    <script src="./Checkout example for Bootstrap_files/holder.min.js.download"></script>
+    <script type = "text/JavaScript">
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      // (function() {
+      //   'use strict';
+
+      //   window.addEventListener('load', function() {
+      //     // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      //     var forms = document.getElementsByClassName('needs-validation');
+
+      //     // Loop over them and prevent submission
+      //     var validation = Array.prototype.filter.call(forms, function(form) {
+      //       form.addEventListener('submit', function(event) {
+      //         if (form.checkValidity() === false) {
+      //           event.preventDefault();
+      //           event.stopPropagation();
+      //         }
+      //         form.classList.add('was-validated');
+      //       }, false);
+      //     });
+      //   }, false);
+      // })();
+      
+    </script>
+  
+
+</body></html>
