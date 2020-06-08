@@ -67,9 +67,9 @@
             <div class="mb-3">
               <label>Old Residential Details</label>
               <div class="input-group">
-                <input type="number" class="form-control" id="ORfloors" placeholder="Old Residential Floors"  >
-                <input type="number" class="form-control" id="Oflats" placeholder="Old Flats per Floor"  >
-                <input type="number" class="form-control" id="OFarea" placeholder="Old Flats Area"  >
+                <input type="number" class="form-control" id="ORfloors" placeholder="Number of floors in your building"  >
+                <input type="number" class="form-control" id="Oflats" placeholder="Number of flats on each floor"  >
+                <input type="number" class="form-control" id="OFarea" placeholder="Area of each flat"  >
 
                 <div class="invalid-feedback" style="width: 100%;">
                   Your Old Flat Fetails are Required
@@ -95,7 +95,7 @@
 
             <div class="row">
               <div class="col-md-5 mb-3">
-                <label for="address2">New unit Price per area</label>
+                <label for="address2">New uniting price per area your developer will sell</label>
                 <input type="number" class="form-control" id="address2" placeholder="Insert"  >
                 <div class="invalid-feedback">
                   Please select a valid area
@@ -109,8 +109,8 @@
                 </div>
               </div>
               <div class="col-md-3 mb-3">
-                <label for="address2">Agent Fees when selling</label>
-                <input type="number" class="form-control" id="address2" placeholder="Insert"  >
+                <label for="address2">Agent Fees</label>
+                <input type="number" class="form-control" id="agentfees" placeholder="Insert"  >
                 <div class="invalid-feedback">
                   Please provide a valid agent fees
                 </div>
@@ -134,8 +134,22 @@
             </div>
 
             <div class="mb-3">
-              <label for="address2">x</label>
-              <input type="number" class="form-control" id="x1" placeholder="Insert"  >
+              <label for="address2">Depreciation</label>
+              <input type="number" class="form-control" id="depreciation" placeholder="Insert"  >
+              <div class="invalid-feedback">
+                Please provide this value
+              </div>              
+            </div>
+            <div class="mb-3">
+              <label for="address2">Compensation</label>
+              <input type="number" class="form-control" id="compensation" placeholder="Insert"  >
+              <div class="invalid-feedback">
+                Please provide this value
+              </div>              
+            </div>
+            <div class="mb-3">
+              <label for="address2">Assumed New Unit Price</label>
+              <input type="number" class="form-control" id="newUnitPrice" placeholder="Insert"  >
               <div class="invalid-feedback">
                 Please provide this value
               </div>              
@@ -145,7 +159,7 @@
             <br></br>
             <h4 class="mb-3">Calculated Values</h4>
             <div class="row">
-              <div class="col-md-6 mb-3">
+              <!-- <div class="col-md-6 mb-3">
                 <label for="cc-name">Old GFA</label>
                 <input type="text" class="form-control" id="oldGFA" placeholder=""  >
               </div>
@@ -169,42 +183,28 @@
               </div>
               <div class="col-md-6 mb-3">
                 <label for="cc-number">Profit</label>
-                <input type="text" class="form-control" id="cost" placeholder=""  >
+                <input type="text" class="form-control" id="profit" placeholder=""  >
                 <div class="invalid-feedback">
                   Credit card number is required
                 </div>
               </div>
               <div class="col-md-6 mb-3">
                 <label for="cc-number">Revenue</label>
-                <input type="text" class="form-control" id="cost" placeholder=""  >
+                <input type="text" class="form-control" id="revenue" placeholder=""  >
+                <div class="invalid-feedback">
+                  Credit card number is required
+                </div>
+              </div> -->
+              <div class="col-md-6 mb-3">
+                <label for="cc-number"><strong>Highest Price you should ask</strong></label>
+                <input type="text" class="form-control" id="maxUnitPrice" placeholder=""  >
                 <div class="invalid-feedback">
                   Credit card number is required
                 </div>
               </div>
               <div class="col-md-6 mb-3">
-                <label for="cc-number">Margin</label>
-                <input type="text" class="form-control" id="cost" placeholder=""  >
-                <div class="invalid-feedback">
-                  Credit card number is required
-                </div>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="cc-number">New Margin</label>
-                <input type="text" class="form-control" id="cost" placeholder=""  >
-                <div class="invalid-feedback">
-                  Credit card number is required
-                </div>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="cc-number"><strong>New Max Unit Price</strong></label>
-                <input type="text" class="form-control" id="cost" placeholder=""  >
-                <div class="invalid-feedback">
-                  Credit card number is required
-                </div>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="cc-number"><strong>Lowest you should ask</strong></label>
-                <input type="text" class="form-control" id="cost" placeholder=""  >
+                <label for="cc-number"><strong>Lowest Price you should ask</strong></label>
+                <input type="text" class="form-control" id="OunitPrice" placeholder=""  >
                 <div class="invalid-feedback">
                   Credit card number is required
                 </div>
